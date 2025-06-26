@@ -15,7 +15,9 @@ app_choice = st.sidebar.radio("Wähle ein Tool:")
 elif app_choice == "2️⃣ Zitat-KI-Prüfer":
     st.header("📜 Fake-Zitat Checker")
     text = st.text_area("Füge ein Zitat oder Text ein:")
+
     if text:
+        try:
         detector = pipeline("text-classification", model="roberta-base-openai-detector")
         result = detector(text)
         st.subheader("Erkennungs-Ergebnis:")
