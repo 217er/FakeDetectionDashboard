@@ -11,7 +11,6 @@ app_choice = st.sidebar.radio("Wähle ein Tool:", [
     "3️⃣ Influencer-Fake-Check",
     "4️⃣ Bewertungs-Check",
     "5️⃣ Kleinanzeigen-Fakebild"
-])
 
 elif app_choice == "2️⃣ Zitat-KI-Prüfer":
     st.header("📜 Fake-Zitat Checker")
