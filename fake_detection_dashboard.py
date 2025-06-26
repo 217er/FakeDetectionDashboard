@@ -6,7 +6,7 @@ st.set_page_config(page_title="🔍 Fake Detection Dashboard", layout="wide")
 
 st.title("🔍 Fake Detection Dashboard")
 st.sidebar.title("Navigation")
-app_choice = st.sidebar.radio("Wähle ein Tool:", [
+app_choice = st.sidebar.radio("Wähle ein Tool:")
     "2️⃣ Zitat-KI-Prüfer",
     "3️⃣ Influencer-Fake-Check",
     "4️⃣ Bewertungs-Check",
