@@ -1,31 +1,17 @@
 import streamlit as st
 from PIL import Image
 from transformers import pipeline
-from deepface import DeepFace
 
 st.set_page_config(page_title="🔍 Fake Detection Dashboard", layout="wide")
 
 st.title("🔍 Fake Detection Dashboard")
 st.sidebar.title("Navigation")
 app_choice = st.sidebar.radio("Wähle ein Tool:", [
-    "1️⃣ Deepfake-Gesichtserkennung",
     "2️⃣ Zitat-KI-Prüfer",
     "3️⃣ Influencer-Fake-Check",
     "4️⃣ Bewertungs-Check",
     "5️⃣ Kleinanzeigen-Fakebild"
 ])
-
-if app_choice == "1️⃣ Deepfake-Gesichtserkennung":
-    st.header("🧠 Gesichtsanalyse mit DeepFace")
-    uploaded_file = st.file_uploader("Bild hochladen", type=["jpg", "png", "jpeg"])
-    if uploaded_file:
-        img = Image.open(uploaded_file)
-        st.image(img, caption="Hochgeladenes Bild", use_column_width=True)
-        with open("temp.jpg", "wb") as f:
-            f.write(uploaded_file.getbuffer())
-        result = DeepFace.analyze(img_path="temp.jpg", actions=["age", "gender", "emotion"])
-        st.subheader("Ergebnis:")
-        st.json(result[0])
 
 elif app_choice == "2️⃣ Zitat-KI-Prüfer":
     st.header("📜 Fake-Zitat Checker")
